@@ -1,8 +1,8 @@
 /* The following demonstration shows how to create a simple table, set the primary  key, create secondary keys, and add data to the table. The purpose of the table is to record information about vehicles. This includes the model, serial number, transmission type, and date of manufacturing.  */
 
-table 50000 " Create a simple table"
+table 50000 "Vehicle"
 {
-    DataClassification = ToBeClassified;
+    DataClassification = CustomerContent;
 
     fields
     {
@@ -39,6 +39,7 @@ table 50000 " Create a simple table"
         {
             Clustered = true;
         }
+        key(SK; "Manufacturing Date", Transmission) { }
     }
 
     fieldgroups
