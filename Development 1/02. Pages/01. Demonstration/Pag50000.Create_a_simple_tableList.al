@@ -5,6 +5,7 @@ page 50000 VehicleList
     Caption = 'Vehicle List';
     UsageCategory = Lists;
     SourceTable = Vehicle;
+    CardPageId = Vehicle;
 
     layout
     {
