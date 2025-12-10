@@ -2,7 +2,6 @@ report 50010 MyProcessOnlyReport
 {
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;
-    DefaultRenderingLayout = LayoutName;
     ProcessingOnly = true;
 
     dataset
@@ -73,15 +72,6 @@ report 50010 MyProcessOnlyReport
 
                 }
             }
-        }
-    }
-
-    rendering
-    {
-        layout(LayoutName)
-        {
-            Type = Excel;
-            LayoutFile = 'mySpreadsheet.xlsx';
         }
     }
 
