@@ -50,6 +50,10 @@ table 50001 "Sales Transaction"
         {
             Clustered = true;
         }
+        key(SK; "Salesperson Code")
+        {
+            SumIndexFields = Amount;
+        }
     }
 
     fieldgroups
