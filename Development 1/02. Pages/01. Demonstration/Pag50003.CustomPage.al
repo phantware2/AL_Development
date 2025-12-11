@@ -24,14 +24,41 @@ page 50005 "Custom Page"
                 {
                     ApplicationArea = All;
                 }
+                field("Unit Cost"; Rec."Unit Cost")
+                {
+                    ApplicationArea = All;
+                }
                 field("Profit %"; Rec."Profit %")
                 {
                     ApplicationArea = All;
+                    ExtendedDatatype = Ratio;
                 }
                 field(Picture; Rec.Picture)
                 {
                     ApplicationArea = All;
                 }
+            }
+        }
+    }
+    actions
+    {
+        area(Processing)
+        {
+            action("Inventory - List")
+            {
+                Image = Report;
+                Promoted = true;
+                PromotedCategory = Report;
+                PromotedIsBig = true;
+                RunObject = Report "Inventory - List";
+            }
+            action("Item Turnover")
+            {
+                Image = Report;
+                Promoted = true;
+                PromotedCategory = Report;
+                PromotedIsBig = true;
+                RunObject = page "Item Turnover";
             }
         }
     }
