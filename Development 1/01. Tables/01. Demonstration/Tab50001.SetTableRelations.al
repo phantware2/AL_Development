@@ -50,7 +50,7 @@ table 50001 "Sales Transaction"
         {
             Clustered = true;
         }
-        key(SK; "Salesperson Code")
+        key(SK; "Salesperson Code", Type)
         {
             SumIndexFields = Amount;
         }
