@@ -1,4 +1,4 @@
-pageextension 50001 SalespersonPuerchaserExt extends "Salespersons/Purchasers"
+pageextension 50001 SalespersonPurchaserExt extends "Salespersons/Purchasers"
 
 {
     layout
@@ -7,6 +7,10 @@ pageextension 50001 SalespersonPuerchaserExt extends "Salespersons/Purchasers"
         addafter("Commission %")
         {
             field(Sales; Rec.Sales)
+            {
+                ApplicationArea = All;
+            }
+            field("Type Filter"; Rec."Type Filter")
             {
                 ApplicationArea = All;
             }
