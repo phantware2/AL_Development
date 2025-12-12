@@ -6,6 +6,7 @@ page 50004 "Course List"
     SourceTable = Course;
     Caption = 'Course List';
     CardPageId = Course;
+    Editable = false;
 
     layout
     {
@@ -28,4 +29,18 @@ page 50004 "Course List"
             }
         }
     }
+    actions
+    {
+        area(processing)
+        {
+            action(RunMyCodeunit)
+            {
+                ApplicationArea = All;
+                Caption = 'Run My Codeunit';
+                Image = Action;
+                RunObject = Codeunit MyCodeunit;
+            }
+        }
+    }
+
 }
