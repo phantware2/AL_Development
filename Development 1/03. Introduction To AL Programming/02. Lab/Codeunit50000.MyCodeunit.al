@@ -2,14 +2,16 @@ codeunit 50000 MyCodeunit
 {
     trigger OnRun()
     begin
-        MESSAGE('The value of %1 is %2', 'YesOrNo', YesOrNo);
-        MESSAGE('The value of %1 is %2', 'Amount', Amount);
-        MESSAGE('The value of %1 is %2', 'When Was It', "When Was It");
-        MESSAGE('The value of %1 is %2', 'What Time', "What Time");
-        MESSAGE('The value of %1 is %2', 'Description', Description);
-        MESSAGE('The value of %1 is %2', 'Code Number', "Code Number");
-        MESSAGE('The value of %1 is %2', 'Ch', Ch);
-        MESSAGE('The value of %1 is %2', 'Color', Color);
+        LoopNo := 25;
+        Message('The value of %1 is %2', LoopNo);
+        Message('The value of %1 is %2', 'YesOrNo', YesOrNo);
+        Message('The value of %1 is %2', 'Amount', Amount);
+        Message('The value of %1 is %2', 'When Was It', "When Was It");
+        Message('The value of %1 is %2', 'What Time', "What Time");
+        Message('The value of %1 is %2', 'Description', Description);
+        Message('The value of %1 is %2', 'Code Number', "Code Number");
+        Message('The value of %1 is %2', 'Ch', Ch);
+        Message('The value of %1 is %2', 'Color', Color);
     end;
 
     var
