@@ -20,7 +20,10 @@ codeunit 50000 MyCodeunit
         MESSAGE('The value of %1 is %2', 'Ch', Ch);
         Ch := 'A';
         MESSAGE('The value of %1 is %2', 'Ch', Ch);
-        Message('The value of %1 is %2', 'Color', Color);
+        Color := 2;
+        MESSAGE('The value of %1 is %2', 'Color', Color);
+        Color := Color::Yellow;
+        MESSAGE('The value of %1 is %2', 'Color', Color);
     end;
 
     var
