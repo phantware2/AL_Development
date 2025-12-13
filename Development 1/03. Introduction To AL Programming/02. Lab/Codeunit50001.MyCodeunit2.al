@@ -7,7 +7,8 @@ codeunit 50001 MyCodeunit2
         CodeA := 'HELLO THERE';
         TextA := 'How Are You? ';
         CodeB := CodeA + '! ' + TextA;
-        Description := 'The message is: ' + CodeB;
+        // Description := 'The message is: ' + CodeB;
+        Description := CopyStr('The message is: ' + CodeB, 1, MaxStrLen(Description));
         Message('The value of %1 is %2', 'Description', Description);
     end;
 
