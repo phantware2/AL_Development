@@ -13,6 +13,9 @@ codeunit 50002 MyCodeunit3
         Amt2 := 0.00000000000000001;
         AmtResult := (Amt1 - Int1) * 3 + Amt2;
         MESSAGE('The value of %1 is %2', 'AmtResult', AmtResult);
+
+        Int1 := 5 + 3 * 6 - 2 DIV -2;
+        MESSAGE('The value of %1 is %2', 'Int1', Int1);
     end;
 
     var
