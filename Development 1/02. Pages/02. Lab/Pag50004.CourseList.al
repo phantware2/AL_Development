@@ -40,6 +40,13 @@ page 50004 "Course List"
                 Image = Action;
                 RunObject = Codeunit MyCodeunit;
             }
+            action(RunMyCodeunit2)
+            {
+                ApplicationArea = All;
+                Caption = 'Run My Codeunit 2';
+                Image = Action;
+                RunObject = Codeunit MyCodeunit2;
+            }
         }
     }
 
