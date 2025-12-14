@@ -54,12 +54,48 @@ page 50007 "Test Statement Page"
     {
         area(Processing)
         {
-            action(Execute)
+            action(ExecuteIF)
             {
+                Caption = 'Execute IF';
+                ApplicationArea = Basic, Suite;
+                Image = ExecuteBatch;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                PromotedOnly = true;
 
                 trigger OnAction()
                 begin
-                    // Result := Value1 > Value12;
+                    if Quantity = 0 then
+                        exit;
+
+                    Result := Quantity * UnitPrice;
+
+                    if Result < 0 then
+                        TotalCredits := TotalCredits + Result
+                    else
+                        TotalSales := TotalSales + Result;
+
+                    GrandTotal := GrandTotal + Result;
+                end;
+            }
+            action(Clear)
+            {
+                ApplicationArea = Basic, Suite;
+                Image = ClearFilter;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                PromotedOnly = true;
+
+                trigger OnAction()
+                begin
+                    Quantity := 0;
+                    UnitPrice := 0;
+                    Result := 0;
+                    TotalSales := 0;
+                    TotalCredits := 0;
+                    GrandTotal := 0;
                 end;
             }
         }
