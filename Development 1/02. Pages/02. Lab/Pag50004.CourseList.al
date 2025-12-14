@@ -67,7 +67,7 @@ page 50004 "Course List"
         Level := '';
         Suggestion := '';
         SPA := false;
-        case Difficulty of
+        case Rec.Difficulty of
             1 .. 5:
                 begin
                     Level := 'Beginner';
@@ -86,7 +86,7 @@ page 50004 "Course List"
                     SPA := false;
                 end;
         end;
-        if ("Passing Rate" > 70) and (Difficulty >= 6) then
+        if (Rec."Passing Rate" > 70) and (Rec.Difficulty >= 6) then
             SPA := true;
     end;
 
@@ -94,5 +94,4 @@ page 50004 "Course List"
         Level: Text[30];
         Suggestion: Text[80];
         SPA: Boolean;
-        Difficulty, "Passing Rate" : Integer;
 }

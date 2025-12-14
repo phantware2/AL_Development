@@ -10,7 +10,7 @@ page 50003 Course
     {
         area(Content)
         {
-            group(GroupName)
+            group(General)
             {
                 field(Code; Rec.Code)
                 {
@@ -39,6 +39,19 @@ page 50003 Course
                 field(Active; Rec.Active)
                 {
                     ApplicationArea = All;
+                }
+                group(CourseLevel)
+                {
+                    Caption = 'Course Level';
+
+                    field(Difficulty; Rec.Difficulty)
+                    {
+                        ApplicationArea = All;
+                    }
+                    field("Passing Rate"; Rec."Passing Rate")
+                    {
+                        ApplicationArea = All;
+                    }
                 }
             }
         }
