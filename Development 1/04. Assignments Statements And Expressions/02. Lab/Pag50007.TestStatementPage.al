@@ -46,6 +46,24 @@ page 50007 "Test Statement Page"
                         Editable = false;
                     }
                 }
+                group(Output2)
+                {
+                    field(TotalQtySales; TotalQtySales)
+                    {
+                        ApplicationArea = All;
+                        Editable = false;
+                    }
+                    field(TotalQtyCredits; TotalQtyCredits)
+                    {
+                        ApplicationArea = All;
+                        Editable = false;
+                    }
+                    field(GrandQtyTotal; GrandQtyTotal)
+                    {
+                        ApplicationArea = All;
+                        Editable = false;
+                    }
+                }
             }
         }
     }
@@ -98,10 +116,38 @@ page 50007 "Test Statement Page"
                     GrandTotal := 0;
                 end;
             }
+            action(ExecuteCompound)
+            {
+                ApplicationArea = Basic, Suite;
+                Caption = 'Execute Compound';
+                Image = ClearFilter;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                PromotedOnly = true;
+
+                trigger OnAction()
+                begin
+                    if Quantity = 0 then
+                        exit;
+                    Result := Quantity * UnitPrice;
+
+                    if Result < 0 then begin
+                        TotalCredits := TotalCredits + Result;
+                        TotalQtyCredits := TotalQtyCredits + Quantity;
+                    end else begin
+                        TotalSales := TotalSales + Result;
+                        TotalQtySales := TotalQtySales + Quantity;
+                    end;
+
+                    GrandTotal := GrandTotal + Result;
+                    GrandQtyTotal := GrandQtyTotal + Quantity;
+                end;
+            }
         }
     }
 
     var
-        Quantity: Integer;
+        Quantity, TotalQtySales, TotalQtyCredits, GrandQtyTotal : Integer;
         UnitPrice, TotalSales, TotalCredits, GrandTotal, Result : Decimal;
 }
