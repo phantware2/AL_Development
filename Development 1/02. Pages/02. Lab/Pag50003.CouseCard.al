@@ -40,18 +40,18 @@ page 50003 Course
                 {
                     ApplicationArea = All;
                 }
-                group(CourseLevel)
-                {
-                    Caption = 'Course Level';
+            }
+            group(CourseLevel)
+            {
+                Caption = 'Course Level';
 
-                    field(Difficulty; Rec.Difficulty)
-                    {
-                        ApplicationArea = All;
-                    }
-                    field("Passing Rate"; Rec."Passing Rate")
-                    {
-                        ApplicationArea = All;
-                    }
+                field(Difficulty; Rec.Difficulty)
+                {
+                    ApplicationArea = All;
+                }
+                field("Passing Rate"; Rec."Passing Rate")
+                {
+                    ApplicationArea = All;
                 }
             }
         }
