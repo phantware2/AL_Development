@@ -144,10 +144,43 @@ page 50007 "Test Statement Page"
                     GrandQtyTotal := GrandQtyTotal + Quantity;
                 end;
             }
+            action(ExecuteCase)
+            {
+                ApplicationArea = Basic, Suite;
+                Caption = 'Execute Case';
+                Image = ClearFilter;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                PromotedOnly = true;
+
+                trigger OnAction()
+                begin
+                    Result := Quantity * UnitPrice;
+                    case true of
+                        quantity = 0:
+                            exit;
+                        Quantity < 0:
+                            begin
+
+                                TotalCredits := TotalCredits + Result;
+                                TotalQtyCredits := TotalQtyCredits + Quantity;
+                            end;
+                        Quantity > 0:
+                            begin
+                                TotalSales := TotalSales + Result;
+                                TotalQtySales := TotalQtySales + Quantity;
+                            end;
+                    end;
+                    GrandTotal := GrandTotal + Result;
+                    GrandQtyTotal := GrandQtyTotal + Quantity;
+                end;
+            }
         }
     }
 
     var
         Quantity, TotalQtySales, TotalQtyCredits, GrandQtyTotal : Integer;
-        UnitPrice, TotalSales, TotalCredits, GrandTotal, Result : Decimal;
+        UnitPrice, TotalSales, TotalCredits, GrandTotal, Result :
+                            Decimal;
 }
