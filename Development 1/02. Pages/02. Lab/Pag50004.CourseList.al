@@ -26,6 +26,18 @@ page 50004 "Course List"
                 {
                     ApplicationArea = All;
                 }
+                field(Level; Level)
+                {
+                    ApplicationArea = All;
+                }
+                field(Suggestion; Suggestion)
+                {
+                    ApplicationArea = All;
+                }
+                field(SPA; SPA)
+                {
+                    ApplicationArea = All;
+                }
             }
         }
     }
@@ -50,4 +62,37 @@ page 50004 "Course List"
         }
     }
 
+    trigger OnAfterGetRecord()
+    begin
+        Level := '';
+        Suggestion := '';
+        SPA := false;
+        case Difficulty of
+            1 .. 5:
+                begin
+                    Level := 'Beginner';
+                    Suggestion := 'Take e-Learning or remote training';
+                    SPA := true;
+                end;
+            6 .. 8:
+                begin
+                    Level := 'Intermediate';
+                    Suggestion := 'Attend instructor-Led';
+                end;
+            9 .. 10:
+                begin
+                    Level := 'Advanced';
+                    Suggestion := 'Attend instructor-Led and self study';
+                    SPA := false;
+                end;
+        end;
+        if ("Passing Rate" > 70) and (Difficulty >= 6) then
+            SPA := true;
+    end;
+
+    var
+        Level: Text[30];
+        Suggestion: Text[80];
+        SPA: Boolean;
+        Difficulty, "Passing Rate" : Integer;
 }
