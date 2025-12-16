@@ -193,6 +193,39 @@ page 50008 "Test Array Page"
                     until IsSorted;
                 end;
             }
+            action(ImprovedSort)
+            {
+                Caption = 'Improved Sort';
+                ApplicationArea = Basic, Suite;
+                Image = Process;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                PromotedOnly = true;
+
+                trigger OnAction()
+                begin
+                    LoopCount := 0;
+                    SwapCount := 0;
+                    LowestSwitch := 2;
+
+                    repeat
+                        IsSorted := true;
+                        for idx := ArrayLen(OutputNumber) downto LowestSwitch do begin
+                            loopCount += 1;
+                            if OutputNumber[idx] < OutputNumber[idx - 1] then begin
+                                // Swap
+                                TempNumber := OutputNumber[idx];
+                                OutputNumber[idx] := OutputNumber[idx - 1];
+                                OutputNumber[idx - 1] := TempNumber;
+                                SwapCount += 1;
+                                IsSorted := false;
+                                LowestSwitch := idx + 1;
+                            end;
+                        end;
+                    until IsSorted;
+                end;
+            }
         }
     }
 
