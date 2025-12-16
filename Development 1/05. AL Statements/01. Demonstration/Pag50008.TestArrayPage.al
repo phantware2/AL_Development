@@ -105,12 +105,15 @@ page 50008 "Test Array Page"
     {
         area(Processing)
         {
-            action(ActionName)
+            action(Clear)
             {
 
                 trigger OnAction()
                 begin
-
+                    Clear(InputNumber);
+                    Clear(OutputNumber);
+                    LoopCount := 0;
+                    SwapCount := 0;
                 end;
             }
         }
