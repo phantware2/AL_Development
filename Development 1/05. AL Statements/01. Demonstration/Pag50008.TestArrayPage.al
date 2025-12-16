@@ -107,6 +107,12 @@ page 50008 "Test Array Page"
         {
             action(Clear)
             {
+                ApplicationArea = Basic, Suite;
+                Image = Process;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                PromotedOnly = true;
 
                 trigger OnAction()
                 begin
@@ -114,6 +120,25 @@ page 50008 "Test Array Page"
                     Clear(OutputNumber);
                     LoopCount := 0;
                     SwapCount := 0;
+                end;
+            }
+            action(GenerateInput)
+            {
+                Caption = 'Generate Input';
+                ApplicationArea = Basic, Suite;
+                Image = Process;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                PromotedOnly = true;
+
+                trigger OnAction()
+                begin
+                    LoopCount := 0;
+                    SwapCount := 0;
+
+                    for idx := 1 to ArrayLen(InputNumber) do
+                        InputNumber[idx] := Random(ArrayLen(InputNumber));
                 end;
             }
         }
