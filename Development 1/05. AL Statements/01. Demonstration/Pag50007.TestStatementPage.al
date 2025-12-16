@@ -181,6 +181,5 @@ page 50007 "Test Statement Page"
 
     var
         Quantity, TotalQtySales, TotalQtyCredits, GrandQtyTotal : Integer;
-        UnitPrice, TotalSales, TotalCredits, GrandTotal, Result :
-                            Decimal;
+        UnitPrice, TotalSales, TotalCredits, GrandTotal, Result : Decimal;
 }
