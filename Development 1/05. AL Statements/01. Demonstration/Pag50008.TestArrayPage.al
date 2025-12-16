@@ -141,6 +141,28 @@ page 50008 "Test Array Page"
                         InputNumber[idx] := Random(ArrayLen(InputNumber));
                 end;
             }
+            action(PopulateOutput)
+            {
+                Caption = 'Populate Output';
+                ApplicationArea = Basic, Suite;
+                Image = Process;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                PromotedOnly = true;
+
+                trigger OnAction()
+                begin
+                    LoopCount := 0;
+                    SwapCount := 0;
+
+                    idx := 1;
+                    while (idx <= ArrayLen(InputNumber)) and (idx <= ArrayLen(OutputNumber)) do begin
+                        OutputNumber[idx] := InputNumber[idx];
+                        idx += 1;
+                    end;
+                end;
+            }
         }
     }
 
