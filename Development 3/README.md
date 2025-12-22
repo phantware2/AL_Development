@@ -25,3 +25,14 @@
 - The assigned scores determine a vendor rating (a numeric value) based on an algorithm.
 - The purchase office cannot release a purchase order if the vendor does not meet standard company requirements (the vendor rating).
 - The application’s behavior should have the capacity to be extended in the future.
+
+### Customer category implementations
+
+One of the business requirements was to have the ability to group customers by category.
+To handle the customer category management requirements, we need to do the following:
+
+1. Define the Customer Category table.
+2. Create the pages (user interface) that will handle the Customer Category entity (the List and Card pages).
+3. Add a new Customer Category field to the standard Customer table.
+4. Add the new field to the standard Customer Card page in the General tab and add some actions to the Customer pages to handle some tasks.
+5. Create the business logic to handle the requirements.
