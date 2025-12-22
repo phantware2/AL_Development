@@ -1,0 +1,19 @@
+tableextension 50101 "PW ItemLedgerEntryExt" extends "Item Ledger Entry"
+{
+    fields
+    {
+        //Field added during Sales Post
+        field(50100; "PW Customer Category Code"; Code[20])
+        {
+            TableRelation = "PW Customer Category";
+            Caption = 'Customer Category';
+            DataClassification = CustomerContent;
+        }
+    }
+    keys
+    {
+        key(PK; "PW Customer Category Code")
+        {
+        }
+    }
+}
