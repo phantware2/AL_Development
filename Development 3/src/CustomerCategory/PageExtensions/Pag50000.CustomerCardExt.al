@@ -30,5 +30,12 @@ pageextension 50100 "PW CustomerCardExt" extends "Customer Card"
                 end;
             }
         }
+        addlast(Promoted)
+        {
+            actionref(PWAssignDefaultCategory; "PW Assign default category")
+            {
+            }
+
+        }
     }
 }

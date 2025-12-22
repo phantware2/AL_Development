@@ -20,10 +20,10 @@ table 50101 "PW Customer Category Setup"
             Caption = 'Default Charge (Item)';
             TableRelation = "Item Charge";
         }
-        field(10; "Shipmt Commission Calc. Method"; enum "PW Shipm. Comm. Calc Method")
-        {
-            Caption = 'Shipment Commission Calc. Method';
-        }
+        // field(10; "Shipmt Commission Calc. Method"; enum "PW Shipm. Comm. Calc Method")
+        // {
+        //     Caption = 'Shipment Commission Calc. Method';
+        // }
     }
     keys
     {
