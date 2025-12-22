@@ -44,9 +44,9 @@ page 50100 "PW Customer Category List"
                 Image = CreateForm;
                 trigger OnAction();
                 var
-                // CustManagement: Codeunit "PKT Customer Category Mgt";
+                    CustManagement: Codeunit "PW Customer Category Mgt";
                 begin
-                    // CustManagement.CreateDefaultCategory();
+                    CustManagement.CreateDefaultCategory();
                 end;
             }
         }
