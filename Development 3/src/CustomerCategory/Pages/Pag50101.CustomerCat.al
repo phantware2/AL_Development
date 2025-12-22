@@ -54,7 +54,7 @@ page 50101 "PW Customer Category Card"
     }
     trigger OnAfterGetRecord()
     begin
-        // TotalSalesAmount := Rec.GetSalesAmount();
+        TotalSalesAmount := Rec.GetSalesAmount();
     end;
 
     var

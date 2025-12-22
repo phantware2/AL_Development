@@ -1,8 +1,8 @@
 table 50100 "PW Customer Category"
 {
     Caption = 'Customer Category';
-    // DrillDownPageId = "PKT Customer Category List";
-    // LookupPageId = "PKT Customer Category List";
+    DrillDownPageId = "PW Customer Category List";
+    LookupPageId = "PW Customer Category List";
     DataClassification = CustomerContent;
     fields
     {
@@ -50,8 +50,10 @@ table 50100 "PW Customer Category"
         }
     }
 
-    procedure GetSalesAmount()
+    procedure GetSalesAmount(): Decimal
+    var
+        CustomerCategoryMgt: Codeunit "PW Customer Category Mgt";
     begin
-
+        // exit(CustomerCategoryMgt.GetSalesAmount(Rec.Code));
     end;
 }
