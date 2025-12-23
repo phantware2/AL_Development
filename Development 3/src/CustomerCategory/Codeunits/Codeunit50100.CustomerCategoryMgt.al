@@ -48,4 +48,13 @@ codeunit 50100 "PW Customer Category Mgt"
             Message('Default Category assigned to all Customers without Category.');
         end;
     end;
+
+    procedure GetTotalCustomersWithoutCategory(): Integer
+    var
+        Customer: Record Customer;
+    begin
+        Customer.SetRange("PW Customer Category Code", '');
+        // exit(Customer.Count());
+        Message('Total Customers without Category: %1', Customer.Count());
+    end;
 }

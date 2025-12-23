@@ -18,6 +18,20 @@ pageextension 50101 "PW CustomerListExt" extends "Customer List"
                     CustomerCategoryMgt.AssignDefaultCategory();
                 end;
             }
+            action(GetTotalCustomersWithoutCategory)
+            {
+                Image = ChangeCustomer;
+                ApplicationArea = All;
+                caption = 'Get Total Customers Without Category';
+                ToolTip = 'Gets the total number of customers without a category assigned';
+
+                trigger OnAction();
+                var
+                    CustomerCategoryMgt: Codeunit "PW Customer Category Mgt";
+                begin
+                    CustomerCategoryMgt.GetTotalCustomersWithoutCategory();
+                end;
+            }
         }
         addafter(Category_Process)
         {
@@ -25,6 +39,9 @@ pageextension 50101 "PW CustomerListExt" extends "Customer List"
             {
                 Caption = 'Categories Process';
                 actionref(PWAssignDefaultCategory; "PW Assign Default Category")
+                {
+                }
+                actionref(GetTotalCustomersWithoutCategory_Promoted; GetTotalCustomersWithoutCategory)
                 {
                 }
             }
