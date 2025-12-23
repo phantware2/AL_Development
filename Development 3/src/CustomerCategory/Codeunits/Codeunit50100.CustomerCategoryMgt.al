@@ -19,4 +19,31 @@ codeunit 50100 "PW Customer Category Mgt"
         else
             Message('Default Customer Category already exists.');
     end;
+
+    procedure AssignDefaultCategory(CustomerCode: Code[20])
+    var
+        Customer: Record Customer;
+        CustomerCategory: Record "PW Customer Category";
+    begin
+        // Set default category to the customer
+        Customer.Get(CustomerCode);
+        CustomerCategory.SetRange(Default, true);
+        if CustomerCategory.FindFirst() then begin
+            Customer.Validate("PW Customer Category Code", CustomerCategory.Code);
+            Customer.Modify();
+        end;
+    end;
+
+    procedure AssignDefaultCategory()
+    var
+        Customer: Record Customer;
+        customerCategory: Record "PW Customer Category";
+    begin
+        //Set default category for ALL Customer 
+        customerCategory.SetRange(Default, true);
+        if customerCategory.FindFirst() then begin
+            Customer.SetFilter("PW Customer Category Code", '%1', '');
+            Customer.ModifyAll("PW Customer Category Code", customerCategory.Code, true);
+        end;
+    end;
 }
