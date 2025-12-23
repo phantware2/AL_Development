@@ -54,6 +54,6 @@ table 50100 "PW Customer Category"
     var
         CustomerCategoryMgt: Codeunit "PW Customer Category Mgt";
     begin
-        // exit(CustomerCategoryMgt.GetSalesAmount(Rec.Code));
+        exit(CustomerCategoryMgt.GetSalesAmount(Rec.Code));
     end;
 }
