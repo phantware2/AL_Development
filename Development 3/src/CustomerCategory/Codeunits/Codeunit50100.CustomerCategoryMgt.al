@@ -57,4 +57,26 @@ codeunit 50100 "PW Customer Category Mgt"
         // exit(Customer.Count());
         Message('Total Customers without Category: %1', Customer.Count());
     end;
+
+    procedure GetSalesAmount(CustomerCategoryCode: Code[20]): Decimal
+    var
+        SalesLine: Record "Sales Line";
+        Customer: Record Customer;
+        TotalAmount: Decimal;
+    begin
+        Customer.SetCurrentKey("PW Customer Category Code");
+        Customer.SetRange("PW Customer Category Code", CustomerCategoryCode);
+        if Customer.FindSet() then
+            repeat
+                SalesLine.SetRange("Document Type", SalesLine."Document Type"::Order);
+                SalesLine.SetRange("Sell-to Customer No.", Customer."No.");
+                SalesLine.SetLoadFields("Line Amount");
+                if SalesLine.FindSet() then
+                    repeat
+                        TotalAmount += SalesLine.Amount;
+                    until SalesLine.Next() = 0;
+            until Customer.Next() = 0;
+
+        exit(TotalAmount);
+    end;
 }
