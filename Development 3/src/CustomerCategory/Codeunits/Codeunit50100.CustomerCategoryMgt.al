@@ -31,6 +31,7 @@ codeunit 50100 "PW Customer Category Mgt"
         if CustomerCategory.FindFirst() then begin
             Customer.Validate("PW Customer Category Code", CustomerCategory.Code);
             Customer.Modify();
+            Message('Default Category assigned to Customer %1.', Customer."No.");
         end;
     end;
 
@@ -44,6 +45,7 @@ codeunit 50100 "PW Customer Category Mgt"
         if customerCategory.FindFirst() then begin
             Customer.SetFilter("PW Customer Category Code", '%1', '');
             Customer.ModifyAll("PW Customer Category Code", customerCategory.Code, true);
+            Message('Default Category assigned to all Customers without Category.');
         end;
     end;
 }

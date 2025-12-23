@@ -13,9 +13,9 @@ pageextension 50101 "PW CustomerListExt" extends "Customer List"
 
                 trigger OnAction();
                 var
-                // CustomerCategoryMgt: Codeunit "PW Customer Category Mgt";
+                    CustomerCategoryMgt: Codeunit "PW Customer Category Mgt";
                 begin
-                    // CustomerCategoryMgt.AssignDefaultCategory();
+                    CustomerCategoryMgt.AssignDefaultCategory();
                 end;
             }
         }
