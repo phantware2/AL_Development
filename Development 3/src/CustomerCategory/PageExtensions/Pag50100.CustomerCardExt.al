@@ -24,9 +24,9 @@ pageextension 50100 "PW CustomerCardExt" extends "Customer Card"
 
                 trigger OnAction();
                 var
-                // CustomerCategoryMgt: Codeunit "PW Customer Category Mgt";
+                    CustomerCategoryMgt: Codeunit "PW Customer Category Mgt";
                 begin
-                    // CustomerCategoryMgt.AssignDefaultCategory(Rec."No.");
+                    CustomerCategoryMgt.AssignDefaultCategory(Rec."No.");
                 end;
             }
         }

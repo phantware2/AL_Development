@@ -8,7 +8,7 @@ pageextension 50101 "PW CustomerListExt" extends "Customer List"
             {
                 Image = ChangeCustomer;
                 ApplicationArea = All;
-                Caption = 'Assign Default Category to all Customers';
+                caption = 'Assign Default Category';
                 ToolTip = 'Assigns the Default Category to all Customers';
 
                 trigger OnAction();
@@ -19,11 +19,11 @@ pageextension 50101 "PW CustomerListExt" extends "Customer List"
                 end;
             }
         }
-        addlast(Promoted)
+        addafter(Category_Process)
         {
-            group(PKTCustomerCategory)
+            group(PWCategory_Process)
             {
-                Caption = 'Customer Category';
+                Caption = 'Categories Process';
                 actionref(PWAssignDefaultCategory; "PW Assign Default Category")
                 {
                 }
