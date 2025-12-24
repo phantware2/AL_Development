@@ -133,12 +133,28 @@ page 50008 "Test Array Page"
                 PromotedOnly = true;
 
                 trigger OnAction()
+                var
+                    tell: Integer;
                 begin
                     LoopCount := 0;
                     SwapCount := 0;
 
-                    for idx := 1 to ArrayLen(InputNumber) do
+                    for idx := 1 to ArrayLen(InputNumber) do begin
                         InputNumber[idx] := Random(ArrayLen(InputNumber));
+
+                        /* 
+                        Iterate idx from 1 to 10
+                        idx := 1
+                        Random(10) → 3   (example)
+                        InputNumber[1] := 3
+                        [3, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+                        
+                         tell := Random(ArrayLen(InputNumber));
+                         Message('Generated idx: %1', idx);
+                         Message('Generated random number: %1', tell);
+                         InputNumber[idx] := tell; */
+                    end;
                 end;
             }
             action(PopulateOutput)
