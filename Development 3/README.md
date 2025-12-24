@@ -36,3 +36,14 @@ To handle the customer category management requirements, we need to do the follo
 3. Add a new Customer Category field to the standard Customer table.
 4. Add the new field to the standard Customer Card page in the General tab and add some actions to the Customer pages to handle some tasks.
 5. Create the business logic to handle the requirements.
+
+### Gift campaign implementations
+
+To handle the gift campaign requirements, we need to do the following:
+
+1. Define the Gift Campaign table. This table must be able to store data as follows:
+
+2. Create the page (user interface) for handling the gift campaign data (a list page).
+3. Handling the business logic for assigning gifts to a sales order is based on Customer Category and the active campaign for this category. This will be done in an external codeunit.
+4. Add a new function to the Sales Order page interface in order to permit the sales operator to automatically insert a gift line when the sales order is finished.
+5. When the sales operator inserts the Quantity in a sales order line, we want to check the active campaigns and alert the user if the ordered quantity is close to the threshold of an active promotion.
