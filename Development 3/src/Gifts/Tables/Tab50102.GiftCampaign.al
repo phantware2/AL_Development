@@ -2,8 +2,9 @@ table 50102 "PW Gift Campaign"
 {
     Caption = 'Gift Campaign';
     DataClassification = CustomerContent;
-    // DrillDownPageId = "PKT Gift Campaign List";
-    // LookupPageId = "PKT Gift Campaign List";
+    DrillDownPageId = "PW Gift Campaign List";
+    LookupPageId = "PW Gift Campaign List";
+
     fields
     {
         field(1; CustomerCategoryCode; Code[20])
