@@ -98,4 +98,11 @@ codeunit 50102 "PW Gift Management"
         if (SalesLine.Quantity < GiftCampaign.MinimumOrderQuantity) and (GiftCampaign.MinimumOrderQuantity - SalesLine.Quantity <= CustomerCatSetup."Gift Tolerance Qty") then
             Message(GiftAlert, SalesLine."No.", Format(GiftCampaign.MinimumOrderQuantity), Format(GiftCampaign.GiftQuantity));
     end;
+
+    // The integration events defined in this codeunit are as follows:
+
+    [IntegrationEvent(true, false)]
+    local procedure OnBeforeFreeGiftSalesLineAdded(var SalesHeader: Record "Sales Header"; var SalesLine: Record "Sales Line"; var Handled: Boolean)
+    begin
+    end;
 }
