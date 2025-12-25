@@ -59,4 +59,30 @@ codeunit 50102 "PW Gift Management"
         else
             exit(0);
     end;
+
+    //Here is the business logic that handles the gift assignment logic:
+    [EventSubscriber(ObjectType::Table, Database::"Sales Line", OnAfterValidateEvent, 'Quantity', false, false)]
+    local procedure CheckGiftEligibility(var Rec: Record "Sales Line")
+    var
+        GiftCampaign: Record "PW Gift Campaign";
+        Customer: Record Customer;
+        SalesHeader: Record "Sales Header";
+        Handled: Boolean;
+    begin
+        if (Rec.Type = Rec.Type::Item) then begin
+            if (Customer.Get(Rec."Sell-to Customer No.")) then begin
+                SalesHeader.Get(Rec."Document Type", Rec."Document No.");
+                GiftCampaign.SetRange(CustomerCategoryCode, Customer."PW Customer Category Code");
+                GiftCampaign.SetRange(ItemNo, Rec."No.");
+                GiftCampaign.SetFilter(StartingDate, '<=%1', SalesHeader."Order Date");
+                GiftCampaign.SetFilter(EndingDate, '>=%1', SalesHeader."Order Date");
+                GiftCampaign.SetRange(Inactive, false);
+                GiftCampaign.SetFilter(MinimumOrderQuantity, '>%1', Rec.Quantity);
+                if GiftCampaign.FindFirst() then begin
+                    //Integration event raised
+
+                end;
+            end;
+        end;
+    end;
 }
