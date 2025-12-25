@@ -46,4 +46,17 @@ codeunit 50102 "PW Gift Management"
                 Message('free gift added');
         end;
     end;
+
+    // Here is the procedure that calculates the last sales line number for a new document:
+    local procedure GetLastSalesDocumentLineNo(SalesHeader: Record "Sales Header"): Integer
+    var
+        SalesLine: Record "Sales Line";
+    begin
+        SalesLine.SetRange("Document Type", SalesHeader."Document Type");
+        SalesLine.SetRange("Document No.", SalesHeader."No.");
+        if SalesLine.FindLast() then
+            exit(SalesLine."Line No.")
+        else
+            exit(0);
+    end;
 }
