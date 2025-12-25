@@ -85,4 +85,17 @@ codeunit 50102 "PW Gift Management"
             end;
         end;
     end;
+
+    local procedure DoGiftCheck(var SalesLine: Record "Sales Line"; var GiftCampaign: Record "PW Gift Campaign"; var Handled: Boolean)
+    var
+        CustomerCatSetup: Record "PW Customer Category Setup";
+        GiftAlert: Label 'Attention: there is an active promotion for item %1. if you buy %2 you can have a gift of %3';
+    begin
+        If Handled then
+            exit;
+
+        CustomerCatSetup.Get();
+        if (SalesLine.Quantity < GiftCampaign.MinimumOrderQuantity) and (GiftCampaign.MinimumOrderQuantity - SalesLine.Quantity <= CustomerCatSetup."Gift Tolerance Qty") then
+            Message(GiftAlert, SalesLine."No.", Format(GiftCampaign.MinimumOrderQuantity), Format(GiftCampaign.GiftQuantity));
+    end;
 }
