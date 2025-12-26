@@ -44,6 +44,10 @@ pageextension 50002 CustomerCardExt extends "Customer Card"
           CreditLimitCalculated)
         THEN
             EXIT;
+        CreditLimitActual := CreditLimitCalculated;
+        Rec.UpdateCreditLimit(CreditLimitActual);
+        IF CreditLimitActual <> CreditLimitCalculated THEN
+            MESSAGE(Text90002, CreditLimitActual);
     end;
 
     var
