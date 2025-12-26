@@ -8,25 +8,28 @@ pageextension 50002 CustomerCardExt extends "Customer Card"
     actions
     {
         // Add changes to page actions here
-        addafter("&Customer")
+        addlast("F&unctions")
         {
             action(UpdateCreditLimit)
             {
                 Caption = 'Update Credit Limit';
                 ApplicationArea = All;
                 Image = CalculateCost;
-                Promoted = true;
-                PromotedCategory = Process;
-                PromotedIsBig = true;
-                PromotedOnly = true;
-
                 trigger OnAction()
                 begin
                     CallUpdateCreditLimit;
                 end;
             }
         }
+        addlast(Promoted)
+        {
+            actionref(UpdateCreditLimit1; UpdateCreditLimit)
+            {
+            }
+
+        }
     }
+
 
     local procedure CallUpdateCreditLimit()
     var
