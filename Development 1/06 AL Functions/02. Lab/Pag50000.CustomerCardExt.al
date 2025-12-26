@@ -32,7 +32,18 @@ pageextension 50002 CustomerCardExt extends "Customer Card"
     var
         CreditLimitCalculated, CreditLimitActual : Decimal;
     begin
-        CreditLimitCalculated := Rec.CalculateCreditLimit()
+        CreditLimitCalculated := Rec.CalculateCreditLimit;
+        IF CreditLimitCalculated = Rec."Credit Limit (LCY)" THEN BEGIN
+            MESSAGE(Text90003);
+            EXIT;
+        END;
+        IF GUIALLOWED AND NOT CONFIRM(
+          Text90001,
+          FALSE,
+          Rec.FIELDCAPTION("Credit Limit (LCY)"),
+          CreditLimitCalculated)
+        THEN
+            EXIT;
     end;
 
     var
