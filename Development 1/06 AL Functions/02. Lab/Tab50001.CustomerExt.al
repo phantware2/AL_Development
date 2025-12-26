@@ -17,7 +17,9 @@ tableextension 50001 CustomerExt extends Customer
 
     procedure UpdateCreditLimit(var NewCreditLimit: Decimal)
     begin
-
+        NewCreditLimit := Round(NewCreditLimit, 10000);
+        Rec.Validate("Credit Limit (LCY)", NewCreditLimit);
+        Rec.Modify();
     end;
 
     procedure CalculateCreditLimit(): Decimal
