@@ -21,7 +21,12 @@ tableextension 50001 CustomerExt extends Customer
     end;
 
     procedure CalculateCreditLimit(): Decimal
+    var
+        Cust: Record Customer;
     begin
-
+        Cust := Rec;
+        Cust.SetRange("Date Filter", CalcDate('<-12M', WorkDate), WorkDate);
+        Cust.CalcFields("Sales (LCY)", "Balance (LCY)");
+        exit(Round(Cust."Sales (LCY)" * 0.5));
     end;
 }
