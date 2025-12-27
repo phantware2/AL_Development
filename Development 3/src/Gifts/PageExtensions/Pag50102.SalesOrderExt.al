@@ -13,9 +13,9 @@ pageextension 50102 "PW SalesOrderExt" extends "Sales Order"
 
                 trigger OnAction()
                 var
-                // GiftManagement: Codeunit "PW Gift Management";
+                    GiftManagement: Codeunit "PW Gift Management";
                 begin
-                    // GiftManagement.AddGifts(Rec);
+                    GiftManagement.AddGifts(Rec);
                 end;
             }
         }
