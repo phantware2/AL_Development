@@ -13,7 +13,8 @@ codeunit 50102 "PW Gift Management"
         SalesLine.SetFilter("Line Discount %", '<>100');
         if SalesLine.FindSet() then
             repeat
-
+                //Integration event raised
+                OnBeforeFreeGiftSalesLineAdded(SalesHeader, SalesLine, Handled);
             until SalesLine.Next() = 0;
     end;
 
