@@ -15,6 +15,7 @@ codeunit 50102 "PW Gift Management"
             repeat
                 //Integration event raised
                 OnBeforeFreeGiftSalesLineAdded(SalesHeader, SalesLine, Handled);
+                AddFreeGiftSalesLine(SalesHeader, SalesLine, Handled);
             until SalesLine.Next() = 0;
     end;
 
