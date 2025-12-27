@@ -110,4 +110,9 @@ codeunit 50102 "PW Gift Management"
     local procedure OnAfterFreeGiftSalesLineAdded(var SalesHeader: Record "Sales Header"; var SalesLine: Record "Sales Line")
     begin
     end;
+
+    [IntegrationEvent(true, false)]
+    local procedure OnBeforeFreeGiftAlert(var SalesLine: Record "Sales Line"; var Handled: Boolean)
+    begin
+    end;
 }
