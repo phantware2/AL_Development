@@ -8,6 +8,7 @@ tableextension 50001 CustomerExt extends Customer
     keys
     {
         // Add changes to keys here
+        key(SK; "Salesperson Code") { }
     }
 
     fieldgroups
