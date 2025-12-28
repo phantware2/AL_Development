@@ -52,10 +52,10 @@ report 50001 "Customer by Salesperson"
             {
                 group(GroupName)
                 {
-                    field(Name; SourceExpression)
-                    {
+                    // field(Name; SourceExpression)
+                    // {
 
-                    }
+                    // }
                 }
             }
         }
@@ -77,7 +77,7 @@ report 50001 "Customer by Salesperson"
         layout(CustomerbySalesperson)
         {
             Type = RDLC;
-            LayoutFile = './07. Reports/01. Demonstration/layout/CustomerbySalesperson.rdl';
+            LayoutFile = './Development 1/07. Reports/01. Demonstration/layout/CustomerbySalesperson.rdl';
         }
     }
 
