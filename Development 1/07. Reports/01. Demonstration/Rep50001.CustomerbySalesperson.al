@@ -8,9 +8,13 @@ report 50001 "Customer by Salesperson"
     {
         dataitem("Salesperson/Purchaser"; "Salesperson/Purchaser")
         {
-            column(ColumnName; SourceFieldName)
+            column(Code; Code)
             {
-
+                IncludeCaption = true;
+            }
+            column(Name; Name)
+            {
+                IncludeCaption = true;
             }
             dataitem(Customer; Customer)
             {
