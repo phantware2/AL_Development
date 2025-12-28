@@ -22,9 +22,21 @@ report 50001 "Customer by Salesperson"
                 DataItemLink = "Salesperson Code" = field(Code);
                 DataItemTableView = sorting("Salesperson Code");
 
-                column(ColumnName; SourceFieldName)
+                column(CustNo; "No.")
                 {
-
+                    IncludeCaption = true;
+                }
+                column(CustName; Name)
+                {
+                    IncludeCaption = true;
+                }
+                column(CustCity; City)
+                {
+                    IncludeCaption = true;
+                }
+                column(CustPhoneNo; "Phone No.")
+                {
+                    IncludeCaption = true;
                 }
             }
         }
