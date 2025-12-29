@@ -8,6 +8,7 @@ report 50001 "Customer by Salesperson"
     {
         dataitem("Salesperson/Purchaser"; "Salesperson/Purchaser")
         {
+            PrintOnlyIfDetail = true;
             column(Code; Code)
             {
                 IncludeCaption = true;
