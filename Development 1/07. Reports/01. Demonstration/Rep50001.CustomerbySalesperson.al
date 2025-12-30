@@ -22,6 +22,7 @@ report 50001 "Customer by Salesperson"
                 DataItemLinkReference = "Salesperson/Purchaser";
                 DataItemLink = "Salesperson Code" = field(Code);
                 // DataItemTableView = sorting("Salesperson Code");
+                DataItemTableView = sorting("No.");
 
                 column(CustNo; "No.")
                 {
