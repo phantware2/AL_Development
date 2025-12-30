@@ -23,6 +23,7 @@ report 50001 "Customer by Salesperson"
                 DataItemLink = "Salesperson Code" = field(Code);
                 // DataItemTableView = sorting("Salesperson Code");
                 DataItemTableView = sorting("No.");
+                RequestFilterFields = "No.";
 
                 column(CustNo; "No.")
                 {
