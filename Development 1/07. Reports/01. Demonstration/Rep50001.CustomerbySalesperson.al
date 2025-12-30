@@ -55,10 +55,12 @@ report 50001 "Customer by Salesperson"
             {
                 group(GroupName)
                 {
-                    // field(Name; SourceExpression)
-                    // {
-
-                    // }
+                    field(ShowDetails; ShowDetails)
+                    {
+                        ApplicationArea = All;
+                        Caption = 'Show Details';
+                        ToolTip = 'Select to include detailed customer information in the report.';
+                    }
                 }
             }
         }
@@ -85,5 +87,5 @@ report 50001 "Customer by Salesperson"
     }
 
     var
-        myInt: Integer;
+        ShowDetails: Boolean;
 }
