@@ -25,6 +25,10 @@ report 50001 "Customer by Salesperson"
                 DataItemTableView = sorting("No.");
                 RequestFilterFields = "No.";
 
+                column(ShowDetails; ShowDetails)
+                {
+                    IncludeCaption = false;
+                }
                 column(CustNo; "No.")
                 {
                     IncludeCaption = true;
