@@ -8,7 +8,19 @@ report 50002 "Customer Details"
     {
         dataitem(Customer; Customer)
         {
-            column(ColumnName; SourceFieldName)
+            column(No; "No.")
+            {
+
+            }
+            column(Name; Name)
+            {
+
+            }
+            column(City; City)
+            {
+
+            }
+            column(PhoneNo; "Phone No.")
             {
 
             }
@@ -16,7 +28,27 @@ report 50002 "Customer Details"
             {
                 DataItemLinkReference = Customer;
                 DataItemLink = "Customer No." = field("No.");
-                column(ColumnName; SourceFieldName)
+                column(CustomerNo; "Customer No.")
+                {
+
+                }
+                column(PostingDate; "Posting Date")
+                {
+
+                }
+                column(DocumentType; "Document Type")
+                {
+
+                }
+                column(DocumentNo; "Document No.")
+                {
+
+                }
+                column(Description; Description)
+                {
+
+                }
+                column(AmountLCY; "Amount (LCY)")
                 {
 
                 }
