@@ -10,19 +10,19 @@ report 50002 "Customer Details"
         {
             column(No; "No.")
             {
-
+                IncludeCaption = true;
             }
             column(Name; Name)
             {
-
+                IncludeCaption = true;
             }
             column(City; City)
             {
-
+                IncludeCaption = true;
             }
             column(PhoneNo; "Phone No.")
             {
-
+                IncludeCaption = true;
             }
             dataitem("Cust. Ledger Entry"; "Cust. Ledger Entry")
             {
@@ -30,27 +30,27 @@ report 50002 "Customer Details"
                 DataItemLink = "Customer No." = field("No.");
                 column(CustomerNo; "Customer No.")
                 {
-
+                    IncludeCaption = true;
                 }
                 column(PostingDate; "Posting Date")
                 {
-
+                    IncludeCaption = true;
                 }
                 column(DocumentType; "Document Type")
                 {
-
+                    IncludeCaption = true;
                 }
                 column(DocumentNo; "Document No.")
                 {
-
+                    IncludeCaption = true;
                 }
                 column(Description; Description)
                 {
-
+                    IncludeCaption = true;
                 }
                 column(AmountLCY; "Amount (LCY)")
                 {
-
+                    IncludeCaption = true;
                 }
             }
         }
