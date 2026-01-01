@@ -91,4 +91,10 @@ report 50002 "Customer Details"
             LayoutFile = './Development 1/07. Reports/01. Demonstration/layout/CustomerDetails.rdl';
         }
     }
+    var
+        TotalPostingDate: label 'Total for Posting Date ';
+        TotalCustomer: label 'Total for Customer';
+        GrandTotal: label 'Grand Total';
+
+
 }
