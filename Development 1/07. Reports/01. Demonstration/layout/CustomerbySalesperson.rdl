@@ -604,6 +604,9 @@
                       <Textbox Name="Textbox21">
                         <rd:DefaultName>Textbox21</rd:DefaultName>
                         <CanGrow>true</CanGrow>
+                        <ToggleImage>
+                          <InitialState>true</InitialState>
+                        </ToggleImage>
                         <UserSort>
                           <SortExpression>=Fields!Code.Value</SortExpression>
                           <SortExpressionScope>table1_Group1 </SortExpressionScope>
@@ -694,9 +697,13 @@
                   <TablixHeader>
                     <Size>1in</Size>
                     <CellContents>
+                      <rd:Selected>true</rd:Selected>
                       <Textbox Name="Code1">
                         <rd:DefaultName>Code1</rd:DefaultName>
                         <CanGrow>true</CanGrow>
+                        <ToggleImage>
+                          <InitialState>true</InitialState>
+                        </ToggleImage>
                         <KeepTogether>true</KeepTogether>
                         <Paragraphs>
                           <Paragraph>
@@ -771,6 +778,9 @@
                       </TablixMembers>
                     </TablixMember>
                   </TablixMembers>
+                  <Visibility>
+                    <ToggleItem>Code1</ToggleItem>
+                  </Visibility>
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
