@@ -52,6 +52,15 @@ report 50002 "Customer Details"
                 {
                     IncludeCaption = true;
                 }
+                column(TotalPostingDate; TotalPostingDate)
+                {
+                }
+                column(TotalCustomer; TotalCustomer)
+                {
+                }
+                column(GrandTotal; GrandTotal)
+                {
+                }
             }
         }
     }
@@ -92,9 +101,9 @@ report 50002 "Customer Details"
         }
     }
     var
-        TotalPostingDate: label 'Total for Posting Date ';
-        TotalCustomer: label 'Total for Customer';
-        GrandTotal: label 'Grand Total';
+        TotalPostingDate: Label 'Total for Posting Date ';
+        TotalCustomer: Label 'Total for Customer';
+        GrandTotal: Label 'Grand Total';
 
 
 }
