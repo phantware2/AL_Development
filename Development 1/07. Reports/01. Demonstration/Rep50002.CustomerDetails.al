@@ -8,6 +8,15 @@ report 50002 "Customer Details"
     {
         dataitem(Customer; Customer)
         {
+            column(TotalPostingDate; TotalPostingDate)
+            {
+            }
+            column(TotalCustomer; TotalCustomer)
+            {
+            }
+            column(GrandTotal; GrandTotal)
+            {
+            }
             column(No; "No.")
             {
                 IncludeCaption = true;
@@ -51,15 +60,6 @@ report 50002 "Customer Details"
                 column(AmountLCY; "Amount (LCY)")
                 {
                     IncludeCaption = true;
-                }
-                column(TotalPostingDate; TotalPostingDate)
-                {
-                }
-                column(TotalCustomer; TotalCustomer)
-                {
-                }
-                column(GrandTotal; GrandTotal)
-                {
                 }
             }
         }
