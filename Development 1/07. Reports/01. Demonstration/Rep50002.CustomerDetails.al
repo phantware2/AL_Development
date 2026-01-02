@@ -8,6 +8,8 @@ report 50002 "Customer Details"
     {
         dataitem(Customer; Customer)
         {
+            RequestFilterFields = "Date Filter";
+
             column(TotalPostingDate; TotalPostingDate)
             {
             }
@@ -36,7 +38,8 @@ report 50002 "Customer Details"
             dataitem("Cust. Ledger Entry"; "Cust. Ledger Entry")
             {
                 DataItemLinkReference = Customer;
-                DataItemLink = "Customer No." = field("No.");
+                DataItemLink = "Customer No." = field("No."), "Posting Date" = field("Date Filter");
+
                 column(CustomerNo; "Customer No.")
                 {
                     IncludeCaption = true;
