@@ -2,7 +2,7 @@ report 50003 "Course List"
 {
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;
-    DefaultRenderingLayout = LayoutName;
+    DefaultRenderingLayout = CourseList;
 
     dataset
     {
@@ -53,10 +53,10 @@ report 50003 "Course List"
             {
                 group(GroupName)
                 {
-                    field(Name; SourceExpression)
-                    {
+                    // field(Name; SourceExpression)
+                    // {
 
-                    }
+                    // }
                 }
             }
         }
@@ -75,10 +75,10 @@ report 50003 "Course List"
 
     rendering
     {
-        layout(LayoutName)
+        layout(CourseList)
         {
-            Type = Excel;
-            LayoutFile = 'mySpreadsheet.xlsx';
+            Type = RDLC;
+            LayoutFile = './Development 1/07. Reports/02. Lab/layout/CourseList.rdl';
         }
     }
 
