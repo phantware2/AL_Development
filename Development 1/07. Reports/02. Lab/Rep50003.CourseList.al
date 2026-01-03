@@ -8,6 +8,9 @@ report 50003 "Course List"
     {
         dataitem(Course; Course)
         {
+
+            RequestFilterFields = Type;
+
             column(Name; Name)
             {
                 IncludeCaption = true;
