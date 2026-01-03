@@ -10,7 +10,10 @@ report 50003 "Course List"
         {
 
             RequestFilterFields = Type;
-
+            column(Code; Code)
+            {
+                IncludeCaption = true;
+            }
             column(Name; Name)
             {
                 IncludeCaption = true;
