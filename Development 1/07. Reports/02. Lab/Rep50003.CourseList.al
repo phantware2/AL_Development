@@ -6,11 +6,39 @@ report 50003 "Course List"
 
     dataset
     {
-        dataitem(DataItemName; SourceTableName)
+        dataitem(Course; Course)
         {
-            column(ColumnName; SourceFieldName)
+            column(Name; Name)
             {
-
+                IncludeCaption = true;
+            }
+            column(Description; Description)
+            {
+                IncludeCaption = true;
+            }
+            column(Type; Type)
+            {
+                IncludeCaption = true;
+            }
+            column(Duration; Duration)
+            {
+                IncludeCaption = true;
+            }
+            column(Price; Price)
+            {
+                IncludeCaption = true;
+            }
+            column(Active; Active)
+            {
+                IncludeCaption = true;
+            }
+            column(Difficulty; Difficulty)
+            {
+                IncludeCaption = true;
+            }
+            column(Passing_Rate; "Passing Rate")
+            {
+                IncludeCaption = true;
             }
         }
     }
