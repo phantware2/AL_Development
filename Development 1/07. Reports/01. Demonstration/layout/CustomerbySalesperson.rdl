@@ -569,7 +569,6 @@
                   <TablixHeader>
                     <Size>1in</Size>
                     <CellContents>
-                      <rd:Selected>true</rd:Selected>
                       <Textbox Name="Textbox21">
                         <rd:DefaultName>Textbox21</rd:DefaultName>
                         <CanGrow>true</CanGrow>
@@ -578,7 +577,7 @@
                         </ToggleImage>
                         <UserSort>
                           <SortExpression>=Fields!Code.Value</SortExpression>
-                          <SortExpressionScope>table1_Group1 </SortExpressionScope>
+                          <SortExpressionScope>Tablix1</SortExpressionScope>
                         </UserSort>
                         <KeepTogether>true</KeepTogether>
                         <Paragraphs>
@@ -670,9 +669,6 @@
                       <Textbox Name="Code1">
                         <rd:DefaultName>Code1</rd:DefaultName>
                         <CanGrow>true</CanGrow>
-                        <ToggleImage>
-                          <InitialState>true</InitialState>
-                        </ToggleImage>
                         <KeepTogether>true</KeepTogether>
                         <Paragraphs>
                           <Paragraph>
@@ -737,9 +733,6 @@
                         </TablixMember>
                         <TablixMember>
                           <Group Name="Details" />
-                          <Visibility>
-                            <ToggleItem>Code1</ToggleItem>
-                          </Visibility>
                         </TablixMember>
                         <TablixMember>
                           <KeepWithGroup>Before</KeepWithGroup>
@@ -747,9 +740,6 @@
                       </TablixMembers>
                     </TablixMember>
                   </TablixMembers>
-                  <Visibility>
-                    <ToggleItem>Code1</ToggleItem>
-                  </Visibility>
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
