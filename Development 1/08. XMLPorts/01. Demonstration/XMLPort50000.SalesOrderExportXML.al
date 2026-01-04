@@ -25,10 +25,29 @@ xmlport 50000 "Sales Order Export XML"
                 {
                 }
             }
+            tableelement(SalesLine; "Sales Line")
+            {
+                LinkTable = SalesHeader;
+                LinkFields = "Document Type" = field("Document Type"), "Document No." = field("No.");
 
+                fieldelement(Type; SalesLine.Type)
+                {
+                }
+                fieldelement(No; SalesLine."No.")
+                {
+                }
+                fieldelement(Quantity; SalesLine.Quantity)
+                {
+                }
+                fieldelement(Price; SalesLine."Unit Price")
+                {
+                }
+                fieldelement(Discount; SalesLine."Line Discount %")
+                {
+                }
+            }
         }
     }
-}
 
     requestpage
     {
