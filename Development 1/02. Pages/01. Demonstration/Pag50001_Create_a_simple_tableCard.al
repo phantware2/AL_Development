@@ -1,8 +1,6 @@
 page 50001 Vehicle
 {
     PageType = Card;
-    ApplicationArea = All;
-    UsageCategory = Administration;
     SourceTable = Vehicle;
 
     layout
