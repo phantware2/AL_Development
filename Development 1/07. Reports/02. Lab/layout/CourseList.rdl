@@ -111,6 +111,9 @@
                         <Textbox Name="Textbox6">
                           <rd:DefaultName>Textbox6</rd:DefaultName>
                           <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!Code.Value</SortExpression>
+                          </UserSort>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -167,6 +170,9 @@
                         <Textbox Name="Textbox2">
                           <rd:DefaultName>Textbox2</rd:DefaultName>
                           <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!Name.Value</SortExpression>
+                          </UserSort>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -223,6 +229,9 @@
                         <Textbox Name="Textbox3">
                           <rd:DefaultName>Textbox3</rd:DefaultName>
                           <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!Description.Value</SortExpression>
+                          </UserSort>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -279,6 +288,9 @@
                         <Textbox Name="Textbox5">
                           <rd:DefaultName>Textbox5</rd:DefaultName>
                           <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!Type.Value</SortExpression>
+                          </UserSort>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -335,6 +347,9 @@
                         <Textbox Name="Textbox7">
                           <rd:DefaultName>Textbox7</rd:DefaultName>
                           <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!Duration.Value</SortExpression>
+                          </UserSort>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -391,6 +406,9 @@
                         <Textbox Name="Textbox9">
                           <rd:DefaultName>Textbox9</rd:DefaultName>
                           <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!Price.Value</SortExpression>
+                          </UserSort>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -447,6 +465,9 @@
                         <Textbox Name="Textbox11">
                           <rd:DefaultName>Textbox11</rd:DefaultName>
                           <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!Active.Value</SortExpression>
+                          </UserSort>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -503,6 +524,9 @@
                         <Textbox Name="Textbox13">
                           <rd:DefaultName>Textbox13</rd:DefaultName>
                           <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!Dificulty.Value</SortExpression>
+                          </UserSort>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -559,6 +583,9 @@
                         <Textbox Name="Textbox15">
                           <rd:DefaultName>Textbox15</rd:DefaultName>
                           <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!Passing_Rate.Value</SortExpression>
+                          </UserSort>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
