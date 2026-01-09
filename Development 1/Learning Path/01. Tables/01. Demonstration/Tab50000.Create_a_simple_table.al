@@ -10,7 +10,7 @@ table 50000 "Vehicle"
         {
             DataClassification = CustomerContent;
         }
-        field(20; "Serial No."; Integer)
+        field(20; "Serial No."; Code[20])
         {
             DataClassification = CustomerContent;
         }
@@ -21,7 +21,7 @@ table 50000 "Vehicle"
         field(40; Transmission; Option)
         {
             DataClassification = CustomerContent;
-            OptionMembers = Automatic,"4-Speed","5-Speed";
+            OptionMembers = Automatic,"4-Speed","5-Speed",Manual;
         }
         field(50; "List Price"; Decimal)
         {
