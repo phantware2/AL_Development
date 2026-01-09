@@ -10,13 +10,22 @@ xmlport 50001 "Vehicle Import XML"
         {
             tableelement(Vehicle; Vehicle)
             {
-                fieldelement(Make; Vehicle.Model)
+                fieldelement(Model; Vehicle.Model)
+                {
+                }
+                fieldelement(Descripion; Vehicle.Descripion)
                 {
                 }
                 fieldelement(SerialNo; Vehicle."Serial No.")
                 {
                 }
+                fieldelement(Transmission; Vehicle.Transmission)
+                {
+                }
                 fieldelement(ListPrice; Vehicle."List Price")
+                {
+                }
+                fieldelement(ManufacturingDate; Vehicle."Manufacturing Date")
                 {
                 }
             }
