@@ -10,6 +10,7 @@ xmlport 50001 "Vehicle Import XML"
         {
             tableelement(Vehicle; Vehicle)
             {
+                AutoUpdate = true;
                 fieldelement(Model; Vehicle.Model)
                 {
                 }
