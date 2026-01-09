@@ -1,14 +1,23 @@
 xmlport 50001 "Vehicle Import XML"
 {
+    Direction = Import;
+    Format = Xml;
+    FormatEvaluate = Xml;
+
     schema
     {
-        textelement(NodeName1)
+        textelement(VehicleRoot)
         {
-            tableelement(NodeName2; SourceTableName)
+            tableelement(Vehicle; Vehicle)
             {
-                fieldattribute(NodeName3; NodeName2.SourceFieldName)
+                fieldelement(Make; Vehicle.Model)
                 {
-
+                }
+                fieldelement(SerialNo; Vehicle."Serial No.")
+                {
+                }
+                fieldelement(ListPrice; Vehicle."List Price")
+                {
                 }
             }
         }
@@ -22,10 +31,10 @@ xmlport 50001 "Vehicle Import XML"
             {
                 group(GroupName)
                 {
-                    field(Name; SourceExpression)
-                    {
+                    // field(Name; SourceExpression)
+                    // {
 
-                    }
+                    // }
                 }
             }
         }
