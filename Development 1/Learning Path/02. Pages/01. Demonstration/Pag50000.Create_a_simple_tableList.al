@@ -40,4 +40,26 @@ page 50000 VehicleList
             }
         }
     }
+
+    actions
+    {
+        area(Processing)
+        {
+            action(ExportToXML)
+            {
+                Caption = 'Vehicle Import XML';
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = Process;
+                Image = ImportExcel;
+
+                trigger OnAction()
+                var
+                    Xmlport: XmlPort "Vehicle Import XML";
+                begin
+                    Xmlport.Run();
+                end;
+            }
+        }
+    }
 }
