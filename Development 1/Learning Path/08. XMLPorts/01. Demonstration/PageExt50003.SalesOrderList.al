@@ -1,4 +1,4 @@
-pageextension 50003 SalesOrderExt extends "Sales Order List"
+pageextension 50003 SalesOrderExt extends "Sales Order"
 {
     layout
     {
@@ -25,6 +25,15 @@ pageextension 50003 SalesOrderExt extends "Sales Order List"
                 begin
                     Xmlport.Run();
                 end;
+            }
+            action(SalesOrderExportVariable)
+            {
+                Caption = 'Sales Order Export Variable';
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = Process;
+                Image = ExportToExcel;
+                RunObject = xmlport "Sales Order Export Variable";
             }
         }
     }
