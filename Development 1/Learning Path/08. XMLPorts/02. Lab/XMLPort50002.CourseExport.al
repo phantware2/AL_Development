@@ -1,5 +1,9 @@
 xmlport 50002 "Course Export XML"
 {
+
+    Direction = Export;
+    Format = Xml;
+    FormatEvaluate = Xml;
     schema
     {
         textelement(CourseRoot)
