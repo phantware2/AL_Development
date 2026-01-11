@@ -59,6 +59,15 @@ page 50004 "Course List"
                 Image = Action;
                 RunObject = Codeunit MyCodeunit2;
             }
+            action(ExportCourseDetails)
+            {
+                Caption = 'Export Course Details (XML)';
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = Process;
+                Image = ExportToExcel;
+                RunObject = xmlport "Course Export XML";
+            }
         }
     }
 
