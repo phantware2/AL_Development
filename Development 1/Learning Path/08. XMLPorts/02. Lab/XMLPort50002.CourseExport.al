@@ -6,9 +6,32 @@ xmlport 50002 "Course Export XML"
         {
             tableelement(Course; Course)
             {
-                fieldelement(NodeName3; NodeName2.SourceFieldName)
+                fieldelement(Code; Course.Code)
                 {
-
+                }
+                fieldelement(Name; Course.Name)
+                {
+                }
+                fieldelement(Description; Course.Description)
+                {
+                }
+                fieldelement(Type; Course.Type)
+                {
+                }
+                fieldelement(Duration; Course.Duration)
+                {
+                }
+                fieldelement(Price; Course.Price)
+                {
+                }
+                fieldelement(Active; Course.Active)
+                {
+                }
+                fieldelement(Difficulty; Course.Difficulty)
+                {
+                }
+                fieldelement(PassingRate; Course."Passing Rate")
+                {
                 }
             }
         }
@@ -22,10 +45,10 @@ xmlport 50002 "Course Export XML"
             {
                 group(GroupName)
                 {
-                    field(Name; SourceExpression)
-                    {
+                    // field(Name; SourceExpression)
+                    // {
 
-                    }
+                    // }
                 }
             }
         }
