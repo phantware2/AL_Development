@@ -2,11 +2,11 @@ xmlport 50002 "Course Export XML"
 {
     schema
     {
-        textelement(NodeName1)
+        textelement(CourseRoot)
         {
-            tableelement(NodeName2; SourceTableName)
+            tableelement(Course; Course)
             {
-                fieldattribute(NodeName3; NodeName2.SourceFieldName)
+                fieldelement(NodeName3; NodeName2.SourceFieldName)
                 {
 
                 }
