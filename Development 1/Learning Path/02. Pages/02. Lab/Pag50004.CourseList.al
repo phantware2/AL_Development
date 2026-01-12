@@ -7,7 +7,7 @@ page 50004 "Course List"
     Caption = 'Course List';
     CardPageId = Course;
     Editable = false;
-
+    RefreshOnActivate = true;
     layout
     {
         area(Content)
