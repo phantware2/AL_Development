@@ -61,12 +61,12 @@ page 50004 "Course List"
             }
             action(ExportCourseDetails)
             {
-                Caption = 'Export Course Details (XML)';
+                Caption = 'Course Export Variable';
                 ApplicationArea = All;
                 Promoted = true;
                 PromotedCategory = Process;
                 Image = ExportToExcel;
-                RunObject = xmlport "Course Export XML";
+                RunObject = xmlport "Course Export Variable";
             }
         }
     }
