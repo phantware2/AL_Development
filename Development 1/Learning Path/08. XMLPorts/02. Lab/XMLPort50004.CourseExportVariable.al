@@ -3,6 +3,8 @@ xmlport 50004 "Course Export Variable"
 
     Direction = Export;
     Format = VariableText;
+    FieldDelimiter = 'None';
+    FieldSeparator = ',';
 
     schema
     {
