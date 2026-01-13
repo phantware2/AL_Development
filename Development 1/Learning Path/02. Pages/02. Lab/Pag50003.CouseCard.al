@@ -1,8 +1,6 @@
 page 50003 Course
 {
     PageType = Card;
-    ApplicationArea = All;
-    UsageCategory = Administration;
     SourceTable = Course;
     Caption = 'Course Card';
 
