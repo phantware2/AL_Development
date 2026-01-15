@@ -33,6 +33,8 @@ query 50000 SimpleItem
             dataitem(Vendor; Vendor)
             {
                 DataItemLink = "No." = Item."Vendor No.";
+                SqlJoinType = InnerJoin;
+
                 column(Name; Name)
                 {
                 }
@@ -49,7 +51,7 @@ query 50000 SimpleItem
                     column(Currency_Code; "Currency Code")
                     {
                     }
-                    filter(Price; "Direct Unit Cost")
+                    column(Price; "Direct Unit Cost")
                     {
                     }
                 }
