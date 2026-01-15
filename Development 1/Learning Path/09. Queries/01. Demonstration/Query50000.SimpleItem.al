@@ -6,15 +6,28 @@ query 50000 SimpleItem
 
     elements
     {
-        dataitem(DataItemName; SourceTableName)
+        dataitem(Item; Item)
         {
-            column(ColumnName; SourceFieldName)
+            column(No_; "No.")
             {
-
             }
-            filter(FilterName; SourceFieldName)
+            column(Description; Description)
             {
-
+            }
+            column(Base_Unit_of_Measure; "Base Unit of Measure")
+            {
+            }
+            column(Unit_Cost; "Unit Cost")
+            {
+            }
+            filter(Item_Category_Code; "Item Category Code")
+            {
+            }
+            filter(Inventory; Inventory)
+            {
+            }
+            filter(Inventory_Posting_Group; "Inventory Posting Group")
+            {
             }
         }
     }
