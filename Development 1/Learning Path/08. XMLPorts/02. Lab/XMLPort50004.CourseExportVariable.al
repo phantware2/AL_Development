@@ -21,19 +21,23 @@ xmlport 50004 "Course Export Variable"
                 fieldelement(Difficulty; Course.Difficulty) { }
                 fieldelement(PassingRate; Course."Passing Rate") { }
 
-                trigger OnAfterGetRecord()
-                var
-                    ProgressPercent: Integer;
+                trigger OnBeforeInsertRecord()
+                // var
+                //     ProgressPercent: Integer;
                 begin
-                    CurrentCount += 1;
+                    //     CurrentCount += 1;
 
-                    if TotalCount > 0 then
-                        ProgressPercent := Round((CurrentCount * 100) / TotalCount, 1)
-                    else
-                        ProgressPercent := 0;
+                    //     if TotalCount > 0 then
+                    //         ProgressPercent := Round((CurrentCount * 100) / TotalCount, 1)
+                    //     else
+                    //         ProgressPercent := 0;
 
-                    ProgressDlg.Update(1, Course.Code);
-                    ProgressDlg.Update(2, Format(ProgressPercent) + ' %');
+                    //     ProgressDlg.Update(1, Course.Code);
+                    //     ProgressDlg.Update(2, Format(ProgressPercent) + ' %');
+
+                    TotDemInv += 1;
+                    dialogProgress.Open((T002txt));
+                    dialogProgress.Update(1, TotDemInv);
                 end;
             }
         }
@@ -52,39 +56,39 @@ xmlport 50004 "Course Export Variable"
         }
     }
 
-    trigger OnPreXmlPort()
-    begin
-        // Count records for progress tracking
-        TotalCount := Course.Count;
-        CurrentCount := 0;
+    // trigger OnPreXmlPort()
+    // begin
+    //     // Count records for progress tracking
+    //     TotalCount := Course.Count;
+    //     CurrentCount := 0;
 
-        ProgressDlg.Open(
-            'Processing Courses\' +
-            'Current Course: #1########################\' +
-            'Progress: #2############################'
-        );
-    end;
+    //     ProgressDlg.Open(
+    //         'Processing Courses\' +
+    //         'Current Course: #1########################\' +
+    //         'Progress: #2############################'
+    //     );
+    // end;
+
+    // trigger OnPostXmlPort()
+    // begin
+    //     ProgressDlg.Close();
+    //     Message('Course upload completed successfully.');
+    // end;
 
     trigger OnPostXmlPort()
     begin
-        ProgressDlg.Close();
-
-        // Refresh Course page automatically
-        RefreshCoursePage();
-
-        Message('Course upload completed successfully.');
-    end;
-
-    local procedure RefreshCoursePage()
-    var
-        CoursePage: Page "Course List";
-    begin
-        // Works if the page is open
-        CoursePage.Update(false);
+        IF TotDemInv <> 0 then
+            dialogProgress.Close();
+        Message(Text001Lbl);
     end;
 
     var
-        ProgressDlg: Dialog;
-        TotalCount: Integer;
-        CurrentCount: Integer;
+        // ProgressDlg: Dialog;
+        // TotalCount: Integer;
+        // CurrentCount: Integer;
+
+        dialogProgress: Dialog;
+        Text001Lbl: Label 'Price List Line Import Successfully';
+        T002Txt: Label 'Total Price List Line Uploaded #1';
+        TotDemInv: Integer;
 }
