@@ -42,6 +42,17 @@ query 50000 SimpleItem
                 filter(Blocked; Blocked)
                 {
                 }
+
+                dataitem(Purchase_Price; "Purchase Price")
+                {
+                    DataItemLink = "Item No." = Item."No.";
+                    column(Currency_Code; "Currency Code")
+                    {
+                    }
+                    filter(Price; "Direct Unit Cost")
+                    {
+                    }
+                }
             }
         }
     }
