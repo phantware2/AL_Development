@@ -3,6 +3,7 @@ query 50000 SimpleItem
     QueryType = Normal;
     Caption = 'Simple Item';
     Description = 'A simple item query demonstration.';
+    QueryCategory = 'Item List';
 
     elements
     {
@@ -28,6 +29,19 @@ query 50000 SimpleItem
             }
             filter(Inventory_Posting_Group; "Inventory Posting Group")
             {
+            }
+            dataitem(Vendor; Vendor)
+            {
+                DataItemLink = "No." = Item."Vendor No.";
+                column(Name; Name)
+                {
+                }
+                column(City; City)
+                {
+                }
+                filter(Blocked; Blocked)
+                {
+                }
             }
         }
     }
