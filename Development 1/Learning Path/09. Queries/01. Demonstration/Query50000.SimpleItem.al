@@ -9,6 +9,9 @@ query 50000 SimpleItem
     {
         dataitem(Item; Item)
         {
+            DataItemTableFilter = "Replenishment System" = CONST(Purchase);
+
+
             column(No_; "No.")
             {
             }
@@ -20,6 +23,7 @@ query 50000 SimpleItem
             }
             column(Unit_Cost; "Unit Cost")
             {
+                ColumnFilter = Unit_Cost = filter('<>0');
             }
             filter(Item_Category_Code; "Item Category Code")
             {
