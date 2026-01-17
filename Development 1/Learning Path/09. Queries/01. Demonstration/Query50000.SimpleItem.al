@@ -4,13 +4,13 @@ query 50000 SimpleItem
     Caption = 'Simple Item';
     Description = 'A simple item query demonstration.';
     QueryCategory = 'Item List';
+    OrderBy = ascending(Name), descending(Price);
 
     elements
     {
         dataitem(Item; Item)
         {
             DataItemTableFilter = "Replenishment System" = CONST(Purchase);
-
             filter(Vendor_No_; "Vendor No.")
             {
             }
