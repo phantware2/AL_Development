@@ -11,7 +11,9 @@ query 50000 SimpleItem
         {
             DataItemTableFilter = "Replenishment System" = CONST(Purchase);
 
-
+            filter(Vendor_No_; "Vendor No.")
+            {
+            }
             column(No_; "No.")
             {
             }
@@ -25,20 +27,14 @@ query 50000 SimpleItem
             {
                 ColumnFilter = Unit_Cost = filter('<>0');
             }
-            filter(Item_Category_Code; "Item Category Code")
-            {
-            }
-            filter(Inventory; Inventory)
-            {
-            }
-            filter(Inventory_Posting_Group; "Inventory Posting Group")
-            {
-            }
             dataitem(Vendor; Vendor)
             {
                 DataItemLink = "No." = Item."Vendor No.";
                 SqlJoinType = InnerJoin;
 
+                filter(Vendor_Posting_Group; "Vendor Posting Group")
+                {
+                }
                 column(Name; Name)
                 {
                 }
