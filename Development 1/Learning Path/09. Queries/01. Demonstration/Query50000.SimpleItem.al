@@ -53,6 +53,7 @@ query 50000 SimpleItem
                     }
                     column(Price; "Direct Unit Cost")
                     {
+                        Method = Average;
                     }
                 }
             }
