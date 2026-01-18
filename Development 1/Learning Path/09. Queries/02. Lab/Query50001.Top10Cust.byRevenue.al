@@ -1,6 +1,8 @@
 query 50001 "Top 10 Cust. by Revenue"
 {
     QueryType = Normal;
+    OrderBy = descending(Amount__LCY_);
+    TopNumberOfRows = 10;
 
     elements
     {
